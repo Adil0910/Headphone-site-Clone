@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Headphone Parallax</title>
+  <!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+ html {
+  scroll-behavior: smooth;
+}
+section, div[id^="page"] {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+
+    body {
+      
+  font-family: 'Poppins', sans-serif;
+
+      overflow-x: hidden;
+    }
+
+    /* PAGE 1 */
+    #page1 {
+      height: auto;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      width: 100%;
+    }
+
+    /* PAGE 2 (Parallax Section) */
+    #page2 {
+      height: 100vh;
+      width: 100%;
+      background: linear-gradient(180deg, #d2cccc, #c0baba);
+      position: fixed;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      z-index: 1;
+    }
+#page2 h1 {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    font-size: 17rem;
+    width: 100%;
+    color: #0000004d;
+    background: linear-gradient();
+    transition: transform 0.2s linear;
+}
+  
+
+#page2 img {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    height: 90%;
+    width: 42%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s linear;
+}
+    /* PAGE 3,4,5 */
+    #page3{
+      height: 100vh;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+     background: rgba(255,255,255,0.9); 
+
+    }
+#page4 {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 2rem;
+    background: #fff;
+}
+    #page5{
+      height: 100vh;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+    }
+    #page7{
+      height: 95vh;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+    }
+    video.vid {
+    width: 100%;
+}
+ul {
+    display: flex;
+    list-style-type: none;
+    gap: 50px;
+    font-weight: 600;
+    color: white;
+    font-family: system-ui;
+}
+
+
+
+  ul li {
+    position: relative;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  ul li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 2px;
+    width: 0%;
+    background: white;
+    transition: width 0.3s ease;
+  }
+
+  ul li:hover::after {
+    width: 100%;
+  }
+.nav {
+    display: flex;
+    padding-right: 0px;
+    padding-top: 20px;
+    justify-content: center;
+}
+
+ 
+     .ooo{
+        width: 50%;
+        background-color: white;
+        height: 100vh;
+     }
+      .ooo1 {
+    width: 50%;
+    background-color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+     
+     img#head2 {
+    height: 100%;
+    width: 90%;
+}
+h1#h1a {
+    font-family: cursive;
+    color: #bed904;
+}
+p#para {
+    font-family: cursive;
+    text-align: center;
+    font-size: 25px;
+    margin-block: 15px;
+    color: #0000006e;
+}
+button#btn {
+    padding-block: 8px;
+    padding-inline: 22px;
+    color: white;
+    background: #bed904;
+    font-weight: 700;
+    border: none;
+    box-shadow: 0px 1px 2px gray;
+    border-radius: 30px;
+}
+    #page5 { background: #e6e6e6; }
+
+ h2.title {
+      font-size: 2rem;
+      color: #222;
+      margin-bottom: 20px;
+      font-family: sans-serif;
+    }
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      width: 100%;
+    }
+    .card {
+      background: white;
+      width: 200px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card-body {
+      padding: 15px;
+      text-align: center;
+    }
+    .card-body h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: #333;
+    }
+    .card-body p {
+      color: #777;
+      font-size: 14px;
+    }
+    .price {
+      font-weight: bold;
+      color: #bed904;
+      margin-top: 10px;
+    }
+    .hvid{
+      width: 25%;
+    }
+
+.v1{
+  width: 100%;
+}
+  #page6{
+      height: 200vh;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+    }
+
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 30px 0 20px;
+  color: black;
+  background: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+
+.section img {
+    flex: 1 1 400px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    max-width: 100%;
+    height: 235px;
+}
+    header::after {
+        content: '';
+        position: absolute;
+        top:0; left:0;
+        width:100%; height:100%;
+        background: rgba(0,0,0,0.5);
+    }
+
+    header h1 {
+        position: relative;
+        font-size: 3rem;
+        z-index: 1;
+        letter-spacing: 2px;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+
+    .section {
+        margin-bottom: 60px;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+
+   
+
+    .section-content {
+        flex: 1 1 400px;
+    }
+
+    .section-content h2 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        color: #0d0d0d;
+    }
+
+    .section-content p {
+        font-size: 1rem;
+        color: #555;
+    }
+
+    /* Team */
+    .team-section h2 {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 2rem;
+    }
+
+    .team {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+    }
+
+    .team-member {
+        background-color: #fff;
+        flex: 1 1 250px;
+        border-radius: 12px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        transition: transform 0.3s;
+    }
+
+    .team-member:hover {
+        transform: translateY(-5px);
+    }
+
+   .team-member img {
+    width: 120px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+    .team-member h3 {
+        font-size: 1.2rem;
+        margin: 10px 0 5px 0;
+    }
+
+    .team-member p {
+        color: #777;
+        font-size: 0.95rem;
+    }
+
+ 
+    .page2-content {
+  margin-top: 100vh; 
+  position: relative;
+  z-index: 2;
+}
+ #page8{
+      height: auto;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+      
+    }
+footer {
+    background-color: #000000;
+    color: black;
+    padding: 50px 20px 20px 20px;
+    font-family: Arial, sans-serif;
+}
+p {
+    color: white;
+}
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-brand h2 {
+  font-size: 28px;
+  color: #bed904;
+  margin-bottom: 10px;
+}
+
+.footer-brand p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.footer-links h3,
+.footer-social h3,
+.footer-newsletter h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #bed904;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    display: contents;
+}
+
+.footer-links ul li {
+  margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+  color: #bed904;
+}
+
+.footer-social .social-icons a {
+  margin-right: 15px;
+  display: inline-block;
+}
+
+.footer-social .social-icons img {
+  width: 25px;
+  height: 25px;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s;
+}
+
+.footer-social .social-icons a:hover img {
+  filter: brightness(0) invert(0.6) sepia(1) hue-rotate(90deg) saturate(5);
+}
+
+.footer-newsletter form {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.footer-newsletter input[type="email"] {
+  padding: 8px;
+  border-radius: 30px;
+  border: none;
+  flex: 1;
+}
+
+.footer-newsletter button {
+  padding: 8px 20px;
+  border-radius: 30px;
+  border: none;
+  background-color: #bed904;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.footer-newsletter button:hover {
+  background-color: #9ab100;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.hh {
+    color: white;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+[data-aos] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition-property: transform, opacity;
+}
+#page9 {
+  position: relative; /* fixed ya absolute nahi */
+  z-index: 10; /* sabse upar aayega */
+  background: linear-gradient(180deg, #f7f7f7, #e8e8e8);
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.faq-title {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 40px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.faq-item {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.faq-item h3 {
+  color: #222;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.faq-item p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.5;
+  display: none; /* Hidden by default */
+}
+
+.faq-item.active p {
+  display: block; /* Show on click */
+}
+
+@media (min-width:320px) and (max-width:460px){
+
+   
+  
+ul {
+    display: flex;
+    list-style-type: none;
+    gap: 30px;
+    position: relative;
+    font-weight: 600;
+    color: white;
+    font-family: system-ui;
+    right: 0px;
+}
+ul li {
+    position: relative;
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#page3 {
+    height: 50vh;
+    width: 100%;
+    position: relative;
+    margin-bottom: 190px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    background: #c5bfbf;
+    padding: 40px;
+    justify-content: center;
+}
+#page4 {
+    height: auto;
+    width: 100%;
+    position: relative;
+    margin-bottom: 38px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+#page5 {
+    height: 64vh;
+    width: 100%;
+    position: relative;
+    margin-bottom: 599px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    flex-direction: column;
+}
+img#head2 {
+    height: 100%;
+    width: 100%;
+}
+.faq-item h3 {
+    color: #222;
+    font-size: 0.7em;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+#page7 {
+    height: 50vh;
+    width: 100%;
+    position: relative;
+    margin-bottom: 0px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+ .card-container {
+    gap: 15px;
+  }
+
+.card {
+    width: 251px;
+    margin-bottom: 41px;
+}
+#page2 {
+    height: 54vh;
+    width: 100%;
+    background: linear-gradient(180deg, #d2cccc, #c0baba);
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 1;
+}
+  #page2 h1 {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4.7rem;
+    width: 100%;
+    color: #0000004d;
+    background: linear-gradient();
+    transition: transform 0.2s linear;
+}
+
+
+
+
+h1#h1a {
+    font-family: cursive;
+    font-size: 17px;
+    color: #bed904;
+}
+p#para {
+    font-family: cursive;
+    text-align: center;
+    font-size: 10px;
+    margin-block: 15px;
+    color: #0000006e;
+}
+.ooo {
+    width: 100%;
+    background-color: white;
+    height: 50vh;
+}
+.card-container {
+    display: flex;
+    background: white;
+    gap: 12px;
+    width: 100%;
+}
+.ooo1 {
+    width: 100%;
+    background-color: white;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-block: 26px;
+}
+.container {
+    max-width: 1000px;
+    margin: 0px auto;
+    background: #c5bfbf;
+    padding: 0 0px;
+}
+.section img {
+    flex: 1 1 400px;
+    border-radius: 0px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    max-width: 100%;
+    height: 235px;
+}
+#page6 {
+    height: auto;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+  .page2-content {
+    margin-top: 0vh; /* thoda adjust */
+  }
+  #page7 {
+    height: auto;
+    width: 100%;
+    position: relative;
+    margin-bottom: 0px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    flex-direction: column;
+}
+.hvid {
+    width: 100%;
+}
+.section-title {
+    text-align: center;
+    font-size: 19px;
+    width: 100%;
+    font-weight: bold;
+    margin: 30px 0 20px;
+    color: black;
+    padding-block: 41px;
+    background: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+ body {
+    background: #c5bfbf59;
+    overflow-x: hidden;
+}
+  button#btn {
+    padding-block: 7px;
+    padding-inline: 12px;
+    color: white;
+    background: #bed904;
+    font-weight: 700;
+    font-size: 9px;
+    border: none;
+    box-shadow: 0px 1px 2px gray;
+    border-radius: 30px;
+}
+
+/* ===== Responsive ===== */
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .faq-title {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 40px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+  .footer-newsletter form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-newsletter input[type="email"] {
+    width: 100%;
+  }
+
+
+}
+  @media (min-width:375px) and (max-width:576px){
+    #page2 h1 {
+    position: absolute;
+    top: 45%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    font-size: 5.7rem;
+    width: 100%;
+    color: #0000004d;
+    background: linear-gradient();
+    transition: transform 0.2s linear;
+}
+
+}
+ 
+  </style>
+</head>
+<body>
+  <div id="page1"></div>
+
+  <!-- Fixed Parallax Section -->
+  <div id="page2"data-aos="fade-up">
+    <div class="nav">
+        <ul>
+            <li><a href="#page1">Home</a></li>
+            <li><a href="#page6">About</a></li>
+            <li><a href="#page8">Contact</a></li>
+            <li><a href="#page4">Product</a></li>
+        </ul>
+    </div>
+    <h1 id="title">REALME</h1>
+    <img id="headphone" src="img/headphone1-removebg-preview.png" alt="Headphone">
+  </div>
+
+  <!-- Scrollable content starts after page2 -->
+   <div class="page2-content">
+  <!-- Yahan aapka content -->
+  <div style="margin-top: 100vh; position: relative; z-index: 2;">
+
+</div>
+    <div id="page3">
+        <video class="vid" src="img/headvideo.mp4" muted autoplay loop>
+    </div>
+   <div id="page4">
+  <div id="card-container" class="card-container"></div>
+</div>
+
+    <div id="page5">
+         <div class="ooo" data-aos="fade-up">
+            <img id="head2" src="img/head2.jpg"loading="lazy">
+        </div>
+        <div class="ooo1">
+            <h1 id="h1a" data-aos="fade-up">Redefine Sound.</h1>
+<p id="para" data-aos="fade-up">Immerse yourself in studio-grade sound with luxurious comfort.  
+Crafted for those who live for music.</p>
+<button id="btn" data-aos="fade-up">Discover More</button>
+        </div>
+    </div>
+  </div>
+  <div id="page6">
+
+
+
+
+<div class="container">
+    <!-- Our Story Section -->
+    <div class="section">
+        <img src="img/ab6.jpg" loading="lazy" alt="Our Story">
+        <div class="section-content">
+            <h2 data-aos="fade-up">Our Story</h2>
+            <p data-aos="fade-up">Headphone Hub was created to deliver high-quality audio experiences to music lovers worldwide. Combining sleek design, comfort, and superior sound, our products redefine personal audio. Since our beginning, we've aimed to make every listening moment unforgettable.</p>
+        </div>
+    </div>
+
+    <!-- Mission Section -->
+    <div class="section">
+        <div class="section-content">
+            <h2 data-aos="fade-up">Our Mission</h2>
+            <p data-aos="fade-up">Our mission is simple: provide innovation, style, and premium sound in every headphone we create. We strive to connect people with their music, making each note crisp, clear, and immersive.</p>
+        </div>
+        <img src="img/ab5.jpg"  loading="lazy" alt="Our Mission">
+    </div>
+
+    <!-- Team Section -->
+    <div class="team-section">
+        <h2 data-aos="fade-up">Meet the Team</h2>
+        <div class="team" data-aos="fade-up">
+            <div class="team-member">
+                <img src="img/pfp1.jpeg" alt="Adil Ehtesham">
+                <h3>Adil Ehtesham</h3>
+                <p>Founder & CEO</p>
+            </div>
+            <div class="team-member">
+                <img src="img/pfp2.jpeg" alt="Misbah Falak">
+                <h3>Misbah Falak</h3>
+                <p>Lead Designer</p>
+            </div>
+            <div class="team-member">
+                <img src="img/pfp3.jpeg" alt="Mohd Shaad">
+                <h3>Mohd Shaad</h3>
+                <p>Head of Technology</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+  </div>
+  <div id="page7" data-aos="fade-up">
+      <div class="hvid">
+      <video class="v1" src="img/hello1.mp4" muted autoplay loop></video>
+    </div>
+    <div class="hvid">
+          <video class="v1" src="img/hello2.mp4" muted autoplay loop></video>
+
+
+    </div>
+    <div class="hvid">
+      <video class="v1" src="img/hello3.mp4" muted autoplay loop></video>
+
+
+    </div>
+    <div class="hvid">
+      <video class="v1" src="img/hello4.mp4" muted autoplay loop></video>
+
+    </div>
+  </div>
+  <!-- ✅ New page above footer -->
+<!-- FAQ Section (Above Footer) -->
+<div id="page9" data-aos="fade-up">
+  <h2 class="faq-title" data-aos="fade-up">Frequently Asked Questions</h2>
+
+  <div class="faq-container">
+    <div class="faq-item">
+      <h3 data-aos="fade-up">1. What is the battery life of these headphones?</h3>
+      <p data-aos="fade-up">Our headphones offer up to 30 hours of continuous playback on a full charge.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 data-aos="fade-up">2. Do they support fast charging?</h3>
+      <p data-aos="fade-up">Yes, a 10-minute charge provides up to 5 hours of playtime.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 data-aos="fade-up">3. Are they water-resistant?</h3>
+      <p data-aos="fade-up">They have an IPX4 rating, making them resistant to light splashes and sweat.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 data-aos="fade-up">4. Can I connect them to multiple devices?</h3>
+      <p data-aos="fade-up">Yes, our headphones support multi-device Bluetooth pairing.</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div id="page8" data-aos="fade-up">
+  <div class="footersection">
+    <footer>
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2>Headphonify</h2>
+      <p>Premium headphones for every beat</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#page1">Home</a></li>
+        <li><a href="#page4">Products</a></li>
+        <li><a href="#page6">About</a></li>
+        <li><a href="#page8">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-social">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-facebook hh"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter hh"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram hh"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube hh"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-newsletter">
+      <h3>Newsletter</h3>
+      <p>Subscribe for latest deals & updates</p>
+      <form>
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Headphonify. All Rights Reserved.</p>
+  </div>
+</footer>
+
+  </div>
+</div>
+  <script>
+  AOS.init({
+  duration: 1000,
+  once: true,
+  easing: 'ease-out-cubic',
+  offset: 80
+});
+
+    // ✅ Parallax Effect with Scroll
+  // Replace window.scroll listener with requestAnimationFrame
+let lastScrollY = 0;
+function smoothParallax() {
+  const scrollY = window.scrollY;
+  const title = document.getElementById("title");
+  const headphone = document.getElementById("headphone");
+
+  if (Math.abs(scrollY - lastScrollY) > 1) {
+    title.style.transform = `translate(-50%, calc(-50% + ${scrollY * 0.3}px))`;
+    headphone.style.transform = `translate(-50%, calc(-50% + ${scrollY * 0.6}px))`;
+    lastScrollY = scrollY;
+  }
+
+  requestAnimationFrame(smoothParallax);
+}
+smoothParallax();
+
+
+ const products = [
+      { id: 1, title: "Realme Buds Pro", price: 2999, img: "img/headp1.jpg" },
+      { id: 2, title: "Realme Air 3", price: 2499, img: "img/headp2.jpg" },
+      { id: 3, title: "Realme Buds Q2", price: 1999, img: "img/headp3.jpg" },
+      { id: 4, title: "Realme Bass Boost", price: 1599, img: "img/headp4.jpg" }
+    ];
+      const page4 = document.getElementById("page4");
+
+  const heading = document.createElement("h2");
+  heading.textContent = "Our Products"; 
+  heading.className = "section-title" ;
+  page4.insertBefore(heading, page4.firstChild);
+
+    const container = document.getElementById("card-container");
+    products.forEach(p => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <img src="${p.img}" alt="${p.title}">
+        <div class="card-body">
+          <h3>${p.title}</h3>
+          <p>High quality wireless earbuds with clear sound.</p>
+          <div class="price">₹${p.price}</div>
+        </div>`;
+      card.addEventListener("click", () => {
+        window.location.href = `ProdectDetail.html?id=${p.id}`;
+      });
+      container.appendChild(card);
+    });
+     const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    item.addEventListener('click', () => {
+      item.classList.toggle('active'); // toggle visibility
+    });
+  });
+    
+  </script>
+</body>
+</html>

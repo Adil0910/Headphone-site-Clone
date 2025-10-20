@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Detail</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f3f3f3;
+    padding: 5px;
+}
+a.back {
+    display: flex;
+    margin-bottom: 20px;
+    color: #bed904;
+    font-weight: bold;
+    text-decoration: none;
+    flex-direction: row-reverse;
+}
+  button {
+    padding-block: 10px;
+    padding-inline: 23px;
+    color: white;
+    background: #bed904;
+    border: none;
+    margin-top: 14px;
+    font-weight: 600;
+}
+    a.back:hover {
+      text-decoration: underline;
+    }
+    .card {
+    max-width: 1199px;
+    margin: auto;
+    background: white;
+    /* border-radius: 12px; */
+    /* box-shadow: 0 4px 12px rgba(0,0,0,0.1); */
+    display: flex;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+.card img {
+    width: 100%;
+    max-width: 439px;
+    object-fit: cover;
+    flex: 1;
+}
+    .details {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+   
+    p {
+      color: #666;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+    .price {
+    margin-block: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+h2 {
+    margin-bottom: 6px;
+    font-size: 28px;
+    
+}
+i.fa-solid.fa-star {
+    color: orange;
+    font-size: 14px;
+    margin-block: 7px;
+}
+  .review-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+
+  .review-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 15px;
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    flex: 0 1 calc(33.333% - 20px); /* 3 cards per row, with gap considered */
+    box-sizing: border-box;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+
+  .review-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .review-card .review-content {
+    flex: 1;
+  }
+
+  .review-card .review-content strong {
+    font-size: 16px;
+    display: block;
+  }
+
+  .review-card .review-content small {
+    color: #555;
+    font-size: 12px;
+  }
+
+  .review-card .review-content p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #333;
+  }
+  @media (max-width: 900px) {
+    .review-card {
+      flex: 1 1 calc(50% - 20px); 
+    }
+  }
+
+  @media (max-width: 600px) {
+.review-card {
+    margin-bottom: 15px;
+    flex: 1 1 100%;
+}
+  }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back">← Back to Products</a>
+  <div id="product"></div>
+<!-- Review Cards Section -->
+<div id="reviews" style="max-width: 1200px; margin: 50px auto;">
+  <h3 style="font-size: 28px; margin-bottom: 30px; text-align:center;">Customer Reviews</h3>
+  
+  <div class="review-row">
+    <div class="review-card">
+      <img src="img/Tech Burner.jpeg" alt="User 1">
+      <div class="review-content">
+        <strong>Harry</strong>
+        <small>harry@example.com</small>
+        <p>Excellent sound quality and very comfortable for long listening sessions.</p>
+      </div>
+    </div>
+    <div class="review-card">
+      <img src="img/ppp3.jpeg" alt="User 2">
+      <div class="review-content">
+        <strong>Misbah Falak</strong>
+        <small>misbah@example.com</small>
+        <p>Fast shipping and the design looks premium. Highly recommended!</p>
+      </div>
+    </div>
+    <div class="review-card">
+      <img src="img/Portrait of handsome serious man _ Free Photo.jpeg" alt="User 3">
+      <div class="review-content">
+        <strong>Mohd Shaad</strong>
+        <small>shaad@example.com</small>
+        <p>The bass is amazing, really immersive experience. Worth every penny.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="review-row">
+    <div class="review-card">
+      <img src="img/ppp1.jpeg" alt="User 4">
+      <div class="review-content">
+        <strong>Ayesha Khan</strong>
+        <small>ayesha@example.com</small>
+        <p>Comfortable fit and great battery life. Perfect for workouts.</p>
+      </div>
+    </div>
+    <div class="review-card">
+      <img src="img/Close up portrait of curly handsome european male _ Free Photo.jpeg" alt="User 5">
+      <div class="review-content">
+        <strong>Rohit Verma</strong>
+        <small>rohit@example.com</small>
+        <p>Clear treble and powerful bass. Truly studio-grade audio.</p>
+      </div>
+    </div>
+    <div class="review-card">
+      <img src="img/ppp2.jpeg" alt="User 6">
+      <div class="review-content">
+        <strong>Sana Malik</strong>
+        <small>sana@example.com</small>
+        <p>Lightweight and stylish design. People keep asking me where I got them!</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script>
+    // ✅ Same product data as index.html
+    const products = [
+  { 
+    id: 1, 
+    title: "Realme Buds Pro", 
+    price: 2999, 
+    img: "img/headp1.jpg", 
+    desc: "Premium noise-cancelling earbuds with deep bass and clear treble.",
+    rating:  "",
+    buyLink: "https://www.realme.com/in/accessories/realme-buds-pro" // Buy Now URL
+  },
+  { 
+    id: 2, 
+    title: "Realme Air 3", 
+    price: 2499, 
+    img: "img/headp2.jpg", 
+    desc: "Ultra-light design with 30-hour battery life and fast charging.",
+    rating: "",
+    buyLink: "https://www.realme.com/in/accessories/realme-air-3"
+  },
+  { 
+    id: 3, 
+    title: "Realme Buds Q2", 
+    price: 1999, 
+    img: "img/headp3.jpg", 
+    desc: "Crystal-clear sound and comfortable fit for all-day use.",
+    rating: "",
+    buyLink: "https://www.realme.com/in/accessories/realme-buds-q2"
+  },
+  { 
+    id: 4, 
+    title: "Realme Bass Boost", 
+    price: 1599, 
+    img: "img/headp4.jpg", 
+    desc: "Powerful bass and immersive sound for music lovers.",
+    rating: "",
+    buyLink: "https://www.realme.com/in/accessories/realme-bass-boost"
+  }
+];
+
+    // ✅ Get id from URL query
+    const id = new URLSearchParams(window.location.search).get("id");
+    const product = products.find(p => p.id == id);
+
+    const container = document.getElementById("product");
+
+    if (product) {
+      container.innerHTML = `
+        <div class="card">
+          <img src="${product.img}" alt="${product.title}" />
+          <div class="details">
+            <h2>${product.title}</h2>
+            <p>${product.desc}</p>
+            <div class="price"><span> Rs </span>${product.price}</div>
+            <div class="rating">${product.rating} <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+  <a href="${product.buyLink}" target="_blank">
+    <button>Buy Now</button>
+  </a>
+          </div>
+          
+ 
+  
+  
+
+        </div>
+      `;
+    } else {
+      container.innerHTML = "<h2>Product not found!</h2>";
+    }
+  </script>
+</body>
+</html>
